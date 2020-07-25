@@ -2,27 +2,73 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
+
+}
+html {
+  overflow:   scroll;
+}
+
+@media only screen and (min-width: 800px) {
+  .app{
+    padding: 10px;
+    height: 80%;
+    width: 30%;
+    margin: auto;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+    justify-content: space-evenly;
+    overflow: hidden;
+
+  }
+  main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 500vh;
+    padding-bottom: -500px;
+  }
+
+  
+ body{
+  background: -webkit-linear-gradient(to right, #F4D03F, #16A085);  
+  background: linear-gradient(to right, #F4D03F, #16A085); 
+ }
+}
+@media only screen and (max-width: 1024px) {  
+  .app{
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+  }
+
+
+ 
 }
 
 body{
   font-family: 'montseratt',sans-serif;
 }
 .app{
-  background-image: url('./assets/cold-bg.jpg');
+  background-image: url('https://media.giphy.com/media/67uxmHhIF3uh6Ph8ew/giphy.gif');
   background-size: cover;
   background-position: bottom;
   transition: 0.4s ease-out;
 }
 
+
 .app.warm{
-  background-image: url('./assets/warm-bg.jpg');
+  background-image: url('https://media.giphy.com/media/67uxmHhIF3uh6Ph8ew/giphy.gif');
 }
 
 main{
   min-height: 100vh;
   background-image: linear-gradient(to bottom,rgba(0,0,0,0.2),rgba(0,0,0,0.75));
   padding: 25px;
+}
+main .forcast{
+  height: 100% !important;
 }
 
 .search-box{
@@ -41,19 +87,29 @@ main{
   outline: none;
 
   background-color: rgba(255,255,255,0.5);
-  border-radius: 30px;
-  margin-top: 0px;
+  border-radius: 32px;
+  margin-top: 2%;
 
   color: #313131;
   font-size: 20px;
 
   transition: 0.4s ease;
 }
+.searchInput{
+  background-color: rgba(255,255,255,0.2) !important;
+  color: white !important;
+}
+.searchInput::hover{
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
 
 .search-box .search-bar:focus{
   background-color: rgba(255,255,255,0.75);
 }
 .location-box .location{
+  margin-top: -60px;
   color: #FFF;
   font-size: 32px;
   font-weight: 500;
@@ -88,6 +144,7 @@ main{
 }
 .weather-box .weather{
   color: #FFF;
+  margin-top: -25px;
   font-size: 48px;
   font-weight: 700;
   text-shadow: 3px 3px rgba(50,50,70,0.5);
